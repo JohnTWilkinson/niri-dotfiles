@@ -1,0 +1,60 @@
+OS:             Arch
+Greeter:        Greetd + Tuigreet
+Compositor:		Niri
+	Launcher:       Rofi (consider Fuzzel also)
+	Notifications:  Mako
+	Screenshot:     TODO
+	Clipboard:      TODO
+	Bar:            Waybar (consider Eww later)
+Terminal:       Alacritty
+	Multiplexer:    Zellij
+	Prompt:			Starship
+	Shell:          Zsh
+		Plugins:	[
+						zsh-vi-mode
+						fzf-tab
+						zsh-completions
+						zsh-autosuggestions
+						zsh-syntax-highlighting
+					]
+Theming:        Base24 + Tinty
+File Manager:   Yazi + Thunar
+Browser:        Zen
+
+CONFIG
+	/etc/systemd/logind.conf.d/powerkey.conf
+		"
+			[Login]
+			HandlePowerKey=poweroff
+		"
+
+		Makes the power key actually act as a power key.
+		
+
+
+TOOLS
+	github-cli
+		On Install:
+		"
+			gh auth login --web --clipboard -p ssh			
+		"
+
+		Logs into github.
+	
+	zsh
+		On Install:
+		"
+			if ! grep -qF "$(which zsh)" /etc/shells ; then
+         			echo "$(which zsh)" | sudo tee -a /etc/shells
+			fi
+			
+			sudo chsh -s $(which zsh)
+		"
+
+		Sets zsh to be the default shell, making sure it's
+		in the list of authorized shells.
+		
+
+		
+	
+
