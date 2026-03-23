@@ -56,7 +56,17 @@ TOOLS
 	
 	Caligula
 		better dd for usb flashing
+
+	fzf
+
+	ttf-jetbrains-mono-nerd
+
+	antidote
+		git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 		
+	ssh
+	git
+		git config --global yada yada yada
 
 		
 	
