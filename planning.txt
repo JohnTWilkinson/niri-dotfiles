@@ -53,6 +53,9 @@ TOOLS
 
 		Sets zsh to be the default shell, making sure it's
 		in the list of authorized shells.
+	
+	Caligula
+		better dd for usb flashing
 		
 
 		
