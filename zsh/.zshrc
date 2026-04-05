@@ -29,14 +29,25 @@ function zvm_after_init() {
   bindkey '^f' autosuggest-accept
 }
 
+alias cd="z"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias lr='ls -RA'
 alias la='ls -A'
-alias g="cd"
+alias g="z"
 alias nvi="nvim"
 alias py="python"
 alias hx="helix"
 alias mcsrr="mcsr -r"
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
 eval "$(zellij setup --generate-auto-start zsh)"
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
