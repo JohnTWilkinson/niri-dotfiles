@@ -1,5 +1,5 @@
 palette = "grey"
-format = """$username$hostname$directory$fill[$all](grey)$time$line_break$character"""
+format = """$username$hostname$directory$fill[$all](grey)$line_break$character"""
 
 [character]
 success_symbol = "[>](bold green)"
@@ -14,7 +14,7 @@ style = '#222222'
 min_time = 10000
 
 [time]
-disabled = false
+disabled = true
 time_format = "%F %T"
 style = "#444444"
 format = '[$time]($style)'
@@ -67,8 +67,8 @@ current_line = "#777777"
 foreground = "#777777"
 comment = "#777777"
 cyan = "#777777"
-green = "#777777"
+green = "#9abe4f"
 orange = "#777777"
 purple = "#777777"
-red = "#777777"
+red = "#e14562ff"
 yellow = "#777777"

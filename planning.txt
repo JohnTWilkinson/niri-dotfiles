@@ -67,7 +67,7 @@ TOOLS
 	ssh
 	git
 		git config --global yada yada yada
-
-		
+	bob
+		neovim version manager
 	
 
