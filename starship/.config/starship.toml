@@ -1,5 +1,8 @@
 palette = "grey"
-format = """$username$hostname$directory$fill[$all](grey)$line_break$character"""
+format = """$username$hostname$directory$fill[$all](white)$line_break$character"""
+
+[directory]
+style='white'
 
 [character]
 success_symbol = "[>](bold green)"
@@ -8,7 +11,7 @@ vicmd_symbol = "[<](bold green)"
 
 [fill]
 symbol = '─'
-style = '#222222'
+style = 'orange'
 
 [cmd_duration]
 min_time = 10000
@@ -38,8 +41,8 @@ style = "bold #777777"
 
 [palettes.grey]
 grey = "#777777"
-none = "#777777"
-white = "#777777"
+none = "#eee"
+white = "#eee"
 rosewater = "#777777"
 flamingo = "#777777"
 pink = "#777777"
@@ -64,11 +67,11 @@ mantle = "#777777"
 crust = "#777777"
 background = "#777777"
 current_line = "#777777"
-foreground = "#777777"
+foreground = "#eee"
 comment = "#777777"
 cyan = "#777777"
 green = "#9abe4f"
-orange = "#777777"
+orange = "#e68033"
 purple = "#777777"
 red = "#e14562ff"
 yellow = "#777777"
