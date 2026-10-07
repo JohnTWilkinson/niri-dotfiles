@@ -7,7 +7,7 @@ ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
 ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/share/bob/nvim-bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 export EDITOR="nvim"
 
@@ -73,3 +73,7 @@ unset __conda_setup
 alias protonvpn="Nuh Uh"
 alias proton="Uh Uh"
 alias virtualbox="Nope, Nope, Nope."
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

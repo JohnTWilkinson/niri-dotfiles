@@ -12,6 +12,7 @@
 
 
 input {
+	disable-power-key-handling
     keyboard {
         xkb {
             // You can set rules, model, layout, variant and options.
@@ -99,7 +100,7 @@ output "eDP-1" {
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
     //transform "normal"
 
-    // Position of the output in the global coordinate space.
+    // Position of the output in the global coordinate space
     // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
     // The cursor can only move between directly adjacent outputs.
     // Output scale and rotation has to be taken into account for positioning:
@@ -111,7 +112,13 @@ output "eDP-1" {
     position x=1920 y=650
 }
 
-output "HDMI-A-1" {
+output "PNP(AOP) 24KG1Y X3 A7EAA0013J00" {
+	position x=1920 y=-100
+	variable-refresh-rate on-demand=true
+	focus-at-startup
+}
+
+output "ViewSonic Corporation VA2447-FHD WE32242A5553" {
     position x=0 y=0
 }
 
@@ -292,8 +299,8 @@ layer-rule {
 
 spawn-at-startup "~/.config/niri/floating.py"
 
-spawn-sh-at-startup "kitty +kitten panel --edge=background --output-name=eDP-1 --layer=bottom --app-id=bonsai -o background_opacity=0.0 cbonsai -l -P -i --base=0 -t 1 -L 200"
-spawn-sh-at-startup "kitty +kitten panel --edge=background --output-name=HDMI-A-1 --layer=bottom --app-id=bonsai -o background_opacity=0.0 cbonsai -l -P -i --base=0 -t 1 -L 200"
+//spawn-sh-at-startup "kitty +kitten panel --edge=background --output-name=eDP-1 --layer=bottom --app-id=bonsai -o background_opacity=0.0 cbonsai -l -P -i --base=0 -t 1 -L 200"
+//spawn-sh-at-startup "kitty +kitten panel --edge=background --output-name=HDMI-A-1 --layer=bottom --app-id=bonsai -o background_opacity=0.0 cbonsai -l -P -i --base=0 -t 1 -L 200"
 // layer-rule {
 //     match namespace="^bonsai$"
 // 
@@ -358,6 +365,11 @@ window-rule {
     match app-id=r#"app\.zen_browser\.zen$"# title="^Extension:"
     match app-id="blueman-manager"
     open-floating true
+}
+
+window-rule {
+	match title="CKAN"
+	open-floating true
 }
 
 // Example: block out two password managers from screen capture.
