@@ -70,6 +70,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+_comp_options+=(globdots)
+
 alias protonvpn="Nuh Uh"
 alias proton="Uh Uh"
 alias virtualbox="Nope, Nope, Nope."

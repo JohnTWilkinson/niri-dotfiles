@@ -156,6 +156,14 @@ keybinds clear-defaults=true {
         }
     }
     shared_among "normal" "locked" {
+		//       bind "Alt h" { MoveFocusOrTab "left"; }
+		//       bind "Alt j" { MoveFocus "down"; }
+		//       bind "Alt k" { MoveFocus "up"; }
+		// bind "Alt l" { MoveFocusOrTab "right"; }
+		bind "Alt h" { MessagePlugin { name "nvim_nav_left"; payload "27,104"; }; }
+        bind "Alt j" { MessagePlugin { name "nvim_nav_down"; payload "27,106"; }; }
+        bind "Alt k" { MessagePlugin { name "nvim_nav_up"; payload "27,107"; }; }
+        bind "Alt l" { MessagePlugin { name "nvim_nav_right"; payload "27,108"; }; }
         bind "Alt left" { MoveFocusOrTab "left"; }
         bind "Alt down" { MoveFocus "down"; }
         bind "Alt up" { MoveFocus "up"; }
@@ -166,12 +174,8 @@ keybinds clear-defaults=true {
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
         bind "Alt f" { ToggleFloatingPanes; }
-        bind "Alt h" { MoveFocusOrTab "left"; }
-        bind "Alt i" { MoveTab "left"; }
-        bind "Alt j" { MoveFocus "down"; }
-        bind "Alt k" { MoveFocus "up"; }
-        bind "Alt l" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
+		bind "Alt q" { CloseFocus;}
         bind "Alt o" { MoveTab "right"; }
         bind "Alt p" { TogglePaneInGroup; }
         bind "Alt Shift p" { ToggleGroupMarking; }
@@ -254,12 +258,15 @@ plugins {
     welcome-screen location="zellij:session-manager" {
         welcome_screen true
     }
+	nvim-nav location="file:~/dotfiles/zellij/.config/zellij/plugins/nvim-nav.wasm"
+
 }
 
 // Plugins to load in the background when a new session starts
 // eg. "file:/path/to/my-plugin.wasm"
 // eg. "https://example.com/my-plugin.wasm"
 load_plugins {
+	nvim-nav
 }
 web_client {
     font "monospace"
