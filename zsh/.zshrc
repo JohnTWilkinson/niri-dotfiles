@@ -41,11 +41,12 @@ alias nvi="nvim"
 alias py="python"
 alias hx="helix"
 alias mcsrr="mcsr -r"
-alias yazi="TERM=xterm-kitty yazi"
+alias yazi="TERM=alacritty yazi"
+alias lg="lazygit"
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	TERM=xterm-kitty command yazi "$@" --cwd-file="$tmp"
+	TERM=alacritty command yazi "$@" --cwd-file="$tmp"
 	IFS= read -r -d '' cwd < "$tmp"
 	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
