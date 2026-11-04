@@ -160,14 +160,14 @@ keybinds clear-defaults=true {
 		//       bind "Alt j" { MoveFocus "down"; }
 		//       bind "Alt k" { MoveFocus "up"; }
 		// bind "Alt l" { MoveFocusOrTab "right"; }
-		bind "Alt h" { MessagePlugin { name "nvim_nav_left"; payload "27,104"; }; }
-        bind "Alt j" { MessagePlugin { name "nvim_nav_down"; payload "27,106"; }; }
-        bind "Alt k" { MessagePlugin { name "nvim_nav_up"; payload "27,107"; }; }
-        bind "Alt l" { MessagePlugin { name "nvim_nav_right"; payload "27,108"; }; }
-        bind "Alt left" { MoveFocusOrTab "left"; }
-        bind "Alt down" { MoveFocus "down"; }
-        bind "Alt up" { MoveFocus "up"; }
-        bind "Alt right" { MoveFocusOrTab "right"; }
+		bind "Alt left" { MessagePlugin { name "nvim_nav_left"; payload "27, 91, 49, 59, 51, 68"; }; }
+        bind "Alt down" { MessagePlugin { name "nvim_nav_down"; payload "27,91,49,59,51,66"; }; }
+        bind "Alt up" { MessagePlugin { name "nvim_nav_up"; payload "27,91,49,59,51,65"; }; }
+        bind "Alt right" { MessagePlugin { name "nvim_nav_right"; payload "27,91,49,59,51,67"; }; }
+        // bind "Alt left" { MoveFocusOrTab "left"; }
+        // bind "Alt down" { MoveFocus "down"; }
+        // bind "Alt up" { MoveFocus "up"; }
+        // bind "Alt right" { MoveFocusOrTab "right"; }
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt =" { Resize "Increase"; }

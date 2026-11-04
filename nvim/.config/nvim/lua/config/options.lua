@@ -16,7 +16,8 @@ opt.scrolloff = 8
 opt.swapfile = false
 opt.undofile = true
 
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 
 -- resizing splits, these accept a count, so `10<A-h>` resizes by 10 * config.resize.amount
